@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/main/Card';
+import languages from "./components/main/data";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App =()=>{
+  return(
+    < div className = "app mt-4" >
+      <div className="header text-center">
+        <h2 className='display-5 fw-bold text-white p-2'> Languages </h2>
+      </div>
+      <div className="cards">
+          {languages.map((item,index)=> <Card {...item} key={index}/>)}
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
